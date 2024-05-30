@@ -1,0 +1,77 @@
+.refreshButton{
+  z-index: 1001;
+}
+.container-card1 {
+  align-items: center;
+  justify-content: center;
+  background: -webkit-linear-gradient(
+  350deg,
+  rgb(79, 130, 120) 0%,
+  rgb(63, 77, 149) 80%
+  );
+}
+.container-buttons{
+  display: flex;
+  justify-content: center;
+  padding-top: 1%; 
+}
+
+.container-card2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slds-grid.justify-center {
+  justify-content: center;
+  padding: 4%;
+  padding-top: 1%;
+}
+
+.inner-card {
+  grid-template-columns: 300px;
+  grid-template-rows: 140px 300px 50px;
+  grid-template-areas: "image" "text" "stats";
+  border-radius: 18px;
+  background: white;
+  font-family: roboto;
+  text-align: center;
+  margin: 30px;
+}
+
+.range-display {
+  /* justify-content: center; */
+  display: inline-block;
+  justify-content: center;
+  padding: 0.5%; 
+  color: blue;
+  box-sizing: border-box;
+  /* width: 784px;
+height: 59px; */
+/* left: calc(50% - 784px/2); */
+/* top: 90px; */
+
+border: 0.9px solid #B0B0B0;
+border-radius: 30px;
+}
+
+.overlay {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(142, 139, 139, 0.5); 
+  z-index: 1000; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.spinerHolder{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001; /* Ensure it's above the overlay */
+}
