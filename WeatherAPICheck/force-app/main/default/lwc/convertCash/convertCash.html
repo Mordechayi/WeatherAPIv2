@@ -1,0 +1,45 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-horizontal_medium">
+            <lightning-input name="num" type="number" label="Enter a number" required value onchange={handleNumChange}></lightning-input>
+            <br>
+            <lightning-combobox
+              name="convert From"
+              label="From"
+              value={valueFrom}
+              placeholder="Select coin"
+              required
+              options={dataOption}
+              onchange={handleFromChange} 
+            ></lightning-combobox>
+            <br>
+            <lightning-combobox
+            name="convert To"
+            label="To"
+            value={valueTo}
+            required
+            placeholder="Select coin"
+            options={dataOption}
+            onchange={handleToChange} 
+          ></lightning-combobox>
+          <br>
+          <div class="slds-m-top_small slds-m-bottom_medium">
+            <h2 class="slds-text-heading_small slds-m-bottom_small">
+                <lightning-button 
+                    label={computedLabel}
+                    title="convert" 
+                    onclick={handleClickConvert} 
+                   
+                    disabled={isConvertDisabled}>
+                </lightning-button>
+
+                  <lightning-button title="convert" icon-name="action:user_activation" onclick={handleChangeDirection} class="slds-m-left_x-small" disabled= {isDirectionDisabled}></lightning-button>
+
+          </h2>
+        </div>
+        <br>
+          <h1 class="slds-text-heading_small" if:false={isResulteDisabled}>{valueNum} {valResulteFrom} = {valueResulte} {valResulteTo}</h1>
+          <br>
+        </div>
+    </lightning-card>
+</template>
