@@ -1,0 +1,40 @@
+<template>
+    <lightning-button class = "refreshButton" label="Refresh" icon-name="utility:refresh" onclick={handleRefresh} ></lightning-button>
+    <div class="container-card1">
+        <div class="range-display">{rangeDisplay}</div> 
+        <div class = "container-buttons">
+            <lightning-button label="Celsius" onclick={setCelsius} variant={celsiusButtonVariant} disabled={buttonDisable}></lightning-button>
+            <lightning-button label="Fahrenheit" onclick={setFahrenheit} variant={fahrenheitButtonVariant} disabled={buttonDisable}></lightning-button>
+        </div>
+        <div class="container-card2">
+            <div class="slds-grid slds-wrap slds-gutters justify-center">
+                <template for:each={currentWeather} for:item="item" if:true={item}>
+                    <div key={item.id} class="slds-col slds-size_1-of-4">
+                        <lightning-card class="inner-card">
+                            <div>{item.name}</div>
+                            <p>{item.description}</p>
+                            <img src = {item.urlToIcon} />
+                            <div class="card-text">{item.temp}&deg;
+                            </div>
+                        </lightning-card>
+                    </div>
+                </template>
+        
+        
+            <div >
+                
+                
+                <c-butten-load-more  onpreviousclick = {handlePreviousClick} onnextclick = {handleNextClick} ></c-butten-load-more>
+            </div>
+           
+            </div>
+        </div>
+    </div>
+    <div if:true={isLoading}>
+        <div class="overlay" ></div>
+        <div class="spinerHolder">
+            <lightning-spinner alternative-text="Loading"   class="custom-spinner" ></lightning-spinner>
+        </div>
+    </div>
+    <!-- <lightning-button label="Refresh" icon-name="utility:refresh" onclick={handleRefresh} ></lightning-button> -->
+</template>
